@@ -6,7 +6,7 @@ function ImageLinkForm ({ onInputChange, onButtonSubmit }) {
     <div>
       <div>
         <p className="f3">
-          {"This Magic Brain will detect faces from your images. Give it a try!"}
+          {"Face--Box will put a box over your face! Give it a try!"}
         </p>
       </div>
       <div className="center">

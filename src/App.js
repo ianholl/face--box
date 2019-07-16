@@ -14,7 +14,7 @@ import './App.css';
 const particleOptions = {
   particles: {
     number: {
-      value: 30,
+      value: 20,
       density: {
         enable: true,
         value_area: 300
@@ -27,7 +27,7 @@ const initialState = {
   input: '',
   imageUrl: '',
   box: {},
-  route: 'signin',
+  route: 'home',
   isSignedIn: false,
   user: {
     id: '',
@@ -56,6 +56,7 @@ class App extends React.Component {
 
   calculateFaceLocation = (data) => {
     const clarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box;
+    console.log(clarifaiFace);
     const image = document.getElementById("inputImage");
     const width = Number(image.width);
     const height = Number(image.height);
@@ -100,7 +101,7 @@ class App extends React.Component {
           })
           .catch(console.log)
       }
-      this.displayFaceBox(this.calculateFaceLocation(response))
+      this.displayFaceBox(this.calculateFaceLocation(response));
     })
     .catch(err => console.log(err))
   }
