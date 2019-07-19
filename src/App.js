@@ -27,7 +27,7 @@ const initialState = {
   input: '',
   imageUrl: '',
   box: {},
-  route: 'home',
+  route: 'signin',
   isSignedIn: false,
   user: {
     id: '',
@@ -78,7 +78,7 @@ class App extends React.Component {
 
   onButtonSubmit = () => {
     this.setState({imageUrl: this.state.input})
-    fetch("https://thawing-fjord-48026.herokuapp.com/imageurl", {
+    fetch("https://face--box--api.herokuapp.com/imageurl", {
       method: "post",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({
@@ -88,7 +88,7 @@ class App extends React.Component {
     .then(response => response.json())
     .then(response => {
       if(response) {
-        fetch("https://thawing-fjord-48026.herokuapp.com/image", {
+        fetch("https://face--box--api.herokuapp.com/image", {
           method: "put",
           headers: {"Content-Type": "application/json"},
           body: JSON.stringify({

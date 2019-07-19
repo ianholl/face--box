@@ -1,5 +1,5 @@
 {
-  "name": "facerecognitionbrain",
+  "name": "facebox",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
